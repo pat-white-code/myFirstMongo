@@ -26,3 +26,15 @@ let proj = {_id: 0, sections:1}
 let filter = {
   sections: {$size: 2}
 }
+
+
+// How many documents in the results.surveys collection contain a score of 7 for the product, "abc"?
+
+let filter = {
+  results: { $elemMatch: 
+    {
+      product: "abc",
+      score: 7
+    }
+  }
+}
