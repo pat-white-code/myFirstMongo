@@ -38,3 +38,26 @@ let filter = {
     }
   }
 }
+
+let filter = {
+  "awards.text": {
+    $regex: /^Won .*/
+  }
+}
+
+let proj = {_id: 0, "awards.text": 1}
+
+
+// How many documents contain at least one score in the results array that is greater than or equal to 70 and less than 80?
+
+let filter = {
+  results: {$elemMatch: {
+    score: {$gte: 70},
+    score: {$lt: 80},
+  }}
+}
+let filter = {
+  results: {$elemMatch: {$lt: 80, $gte: 70}}
+}
+
+// 1020
