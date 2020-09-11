@@ -60,4 +60,22 @@ let filter = {
   results: {$elemMatch: {$lt: 80, $gte: 70}}
 }
 
-// 1020
+// How many documents in the citibike.trips collection have the key tripduration set to null? Ignore any documents that do not contain the tripduration key.
+
+let filter = {
+  $and: { 
+    tripduration: {$exists: true},
+    tripduration: null
+  }
+}
+
+
+// find movies with either Jack Nicholson and John Huston, with viewerRating greater than 7 and mpaaRating equal to "R"
+
+let filter = {
+  cast: {$in:["Jack Nickolson", "John Huston"]},
+  viewerRating: {$gt: 7},
+  mpaaRating: "R"
+
+};
+
